@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 3 使用组件 -->
+    <main-tab-bar></main-tab-bar>
+    <!-- keep-alive 加上这个组件后 通过路由跳转的组件 跳转之前的组件不会默认销毁 -->
+    <!-- keep-alive会保留之前的组件  加上属性 exclude="Detail" 这个页面不会被保留-->
+    <keep-alive exclude="Detail">
+      <!-- 路由配置后 使用占位符 -->
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// 1 导入组件
+import MainTabBar from './components/content/MainTabBar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // 2 注册组件
+    MainTabBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /* 导入基础css */
+  @import './assets/css/base.css';
 </style>
