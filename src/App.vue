@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-tab-bar></main-tab-bar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainTabBar from '@/components/content/mainTabbar/MainTabBar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainTabBar
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+/* github上的公共css */
+@import url(https://yarn.pm/normalize.css);
+// 基础样式
+@import url(./assets/css/base.css);
+// 阿里图标 
+@import url(//at.alicdn.com/t/c/font_3724082_6b7vc6993lw.css);
+
+$color: red;
+
 </style>
